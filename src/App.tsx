@@ -1,14 +1,16 @@
 import { useState } from 'react';
+import CheckboxSelector from './CheckboxSelector';
+import SelectedMessage from './SelectedMessage';
 import './App.css';
 
 function App() {
-  const [message, setMessage] = useState('Hello from React!');
+  const [selectedOption, setSelectedOption] = useState('');
 
   return (
     <div className="app">
       <h1>React Component Data Share</h1>
-      <p>{message}</p>
-      <button onClick={() => setMessage('Data updated!')}>Update message</button>
+      <CheckboxSelector selected={selectedOption} onChange={setSelectedOption} />
+      <SelectedMessage selected={selectedOption} />
     </div>
   );
 }
